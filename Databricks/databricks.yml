@@ -1,0 +1,17 @@
+# This is a Databricks asset bundle definition.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+## (See Databricks docs on CI/CD at https://docs.databricks.com/dev-tools/bundles/ci-cd.html.)
+bundle:
+  name: dab01
+
+include:
+  - ./Jobs/*.yml
+  - ./Jobs/*/*.yml
+  - ./Jobs/*/*/*.yml
+
+targets:
+  DEV:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-1785300601872153.13.azuredatabricks.net
